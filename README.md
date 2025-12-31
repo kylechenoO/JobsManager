@@ -1,7 +1,9 @@
 # JobsManager
 
 **Author:** Kyle
+
 **Email:** [kyle@hacking-linux.com](mailto:kyle@hacking-linux.com)
+
 **Version:** 0.0.1
 
 ## Overview
