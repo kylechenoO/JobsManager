@@ -1,0 +1,22 @@
+[Unit]
+Description=Jobs Manager Service
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/develop/DevOpsPlatform/JobsManager
+ExecStart=/develop/DevOpsPlatform/JobsManager/bin/python bin/JobsManager.py
+Restart=always
+RestartSec=5
+KillSignal=SIGTERM
+TimeoutStopSec=30
+Environment=PYTHONUNBUFFERED=1
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+

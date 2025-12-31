@@ -1,0 +1,32 @@
+{
+  db: {
+    host: "172.18.0.7",
+    port: "3306",
+    username: "root",
+    password: "pass",
+    database: "workflow",
+    charset: "utf8mb4",
+  },
+  log: {
+    path: "log",
+    file: "jobsmanager.log",
+    level: "debug",
+    table: "jm_syslog",
+    rotate: {
+      max_size: 500,
+      backup_count: 7,
+    },
+  },
+  lib: {
+    path: "lib",
+  },
+  jobsmanager: {
+    table: "jm_jobs",
+    coalesce: "False",
+    max_instances: 1,
+    max_workers: 300,
+    misfire_grace_time: 1,
+    timezone: "Asia/Hong_Kong",
+    reload_interval: 10
+  },
+}
