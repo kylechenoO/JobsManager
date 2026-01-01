@@ -84,8 +84,8 @@ class TaskSample(object):
         self.logger.debug({'db.charset': self.config['db']['charset']})
 
         ## init MySQLObj
-        self.MySQLObj = MySQL(self.logger)
-        self.MySQLObj.connect(self.config['db']['host'], self.config['db']['port'], self.config['db']['username'], self.config['db']['password'], self.config['db']['database'], self.config['db']['charset'])
+        self.MySQLObj = MySQL(self.logger, self.config['db']['host'], self.config['db']['port'], self.config['db']['username'], self.config['db']['password'], self.config['db']['database'], self.config['db']['charset'])
+        self.MySQLObj.connect()
 
         ## prt log to mysql
         self.loggerObj.add_mysql_handler(self.MySQLObj, self.config['log']['table'])
@@ -141,6 +141,9 @@ class TaskSample(object):
 
         ## list jobs
         taskObj.list_jobs()
+
+        ## get specify job info
+        taskObj.get_job('job_echo3')
 
         ## remove job
         taskObj.remove_job('job_echo')

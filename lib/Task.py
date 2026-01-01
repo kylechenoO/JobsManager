@@ -112,7 +112,8 @@ class Task(object):
         )
 
         ## start scheduler immediately
-        self._scheduler.start(paused = False)
+        ## self._scheduler.start(paused = False)
+        self._scheduler.start(paused = True)
 
     @staticmethod
     def run_command(logger: object, cmd: str, timeout: int) -> None:
